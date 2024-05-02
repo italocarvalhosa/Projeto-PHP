@@ -1,3 +1,4 @@
+-- Active: 1714689739166@@127.0.0.1@3306@bancog
 create database bancoG;
 use bancoG;
 create table tarefas (
@@ -11,4 +12,4 @@ create table tarefas (
 ALTER TABLE tarefas ADD prioridade ENUM('Baixa', 'Média', 'Alta') DEFAULT 'Média';
 ALTER TABLE tarefas ADD prazo DATE;
 
-
+drop database bancoG;
