@@ -1,17 +1,149 @@
 <?php
-// Verificar se os campos de nome de usuário e senha estão definidos e não vazios
-if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['confirm_password'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $confirm_password = $_POST['confirm_password'];
 
-    // Verificar se a senha e a confirmação da senha correspondem
-    if($password !== $confirm_password) {
-        echo "As senhas não correspondem.";
-    } else {
-        // Processo de registro - este é um exemplo básico, você pode adicionar verificação de duplicatas, etc.
-        // Aqui você pode salvar os detalhes do usuário em um banco de dados, por exemplo.
-        echo "Registro bem-sucedido para o usuário: " . $username;
-    }
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "BancoG";
+
+
+//Conexão
+$conn = new mysqli($servername,$username,$password,$dbname);
+
+//Verificação
+if($conn-> connect_error){
+    die("Conexão falhou;". $conn->connect_error);}
+    
+
+// Dados
+$user = $_Post ['nome'];
+$email = $_post ['email'];
+$password = $_Post ['password'];
+
+//Validação
+if (empty($user)|| empty ($email)|| empty($password)) {
+    die ("Todos os campos são obrigatórios.");
 }
+
+// Verificar no banco de dados
+$sql = "SELECT if FROM users Where username = ? OR email =?";
+
+$stmt = $conn ->prepare ($sql);
+$stmt -> bind_param ("ss", $user, $email);
+$stmt -> execute();
+$stmt -> store_result();
+
+if ($stmt -> num_rows> 0){
+    die("Nome do usuario / email ja esta sendo usado");
+}
+$stmt -> close();
+
+//Senha
+$hashed_password =password_hash($password, $Password_default);
+
+//Iserção
+$sql = "Insert INTO users (username, email, password) values (?,?,?)";
+$stmt = $conn ->prepare($sql);
+$stmt ->bind_param("sss", $user, $email, $hashed_password);
+
+if ($stmt ->execute()) {
+    echo "Cadastro realizado";
+} else{
+    echo "Erro" . $stmt->error;
+}
+
+$stmt->close();
+$conn->close();
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

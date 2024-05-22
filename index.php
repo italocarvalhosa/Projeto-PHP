@@ -1,11 +1,13 @@
 <?php
 
-//COnexões
+//Conexões
 include "cabecalho.php";
 include "login.php";
 include "conteudo.php";
 include "rodape.php";
 include "conexao.php";
+
+
 
 //include "adicionar_tarefas.php";
 
@@ -19,7 +21,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET['id'])) {
     $sql = "UPDATE tarefas SET status = 'concluída' WHERE id = $idTarefa";
     
     if ($conn->query($sql) === TRUE) {
-        // Tarefa marcada como concluída com sucesso
         // Você pode adicionar outras ações aqui, se necessário
     } else {
         echo "Erro ao marcar tarefa como concluída: " . $conn->error;
