@@ -1,8 +1,8 @@
 <?php
 
 //Conexões
-include "cabecalho.php";
 include "login.php";
+include "cabecalho.php";
 include "conteudo.php";
 include "rodape.php";
 include "conexao.php";

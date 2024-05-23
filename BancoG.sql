@@ -12,4 +12,13 @@ create table tarefas (
 ALTER TABLE tarefas ADD prioridade ENUM('Baixa', 'Média', 'Alta') DEFAULT 'Média';
 ALTER TABLE tarefas ADD prazo DATE;
 
+
+create table login(
+id Int auto_increment primary key,
+username varchar (50) not null,
+password varchar (20) not null
+);
+
+
+
 drop database bancoG;
