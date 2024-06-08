@@ -1,6 +1,6 @@
 -- Active: 1714689739166@@127.0.0.1@3306@bancog
-create database bancoG;
-use bancoG;
+create database BancoG;
+use BancoG;
 create table tarefas (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(30) NOT NULL,
@@ -22,3 +22,4 @@ password varchar (20) not null
 
 
 drop database bancoG;
+

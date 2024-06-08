@@ -52,6 +52,6 @@ document.addEventListener('DOMContentLoaded', function() {
         <input type="submit" value="Adicionar Tarefa">       
 </form>
 
-<a href="index.php">Voltar para a Lista de Tarefas</a>
+<a href="conteudo.php">Voltar para a Lista de Tarefas</a>
 
 </html>

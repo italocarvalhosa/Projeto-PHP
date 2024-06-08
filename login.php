@@ -1,57 +1,50 @@
-
-
-
 <?php
-
-session_start();
-include ('$dbname');
-
-if ($S_SERVER["request-method"] == "POST"){
-    $username = mysqli_real_escape_string($conn, $_POST['username']);
-    $password = mysqli_real_escape_string($conn, $_POST['senha']);
+include 'Database.php';
 
 
-    $sql ="Select id, password FROM user WHERE username = '$username'";
-    $result = $conn->query($sql);
-
-    if ($result ->num_rows > 0) {
-        $row = $result -> fetch_assoc();
-
-        if (password_verify($password, $row['password'])) {
-            $_SESSION['username']= $username;
-            header("location: Bem Vindo.php");
+/*class Login extends Database {
+    public function userLogin($username, $password) {
+        $sql = "SELECT * FROM login WHERE username = '$username' AND password = '$password'";
+        $result = $this->conn->query($sql);
+        if ($result->num_rows == 1) {
+            echo "Login bem-sucedido!";
         } else {
-            $error = "Sua senha esta incorreta";
+            echo "Usuário ou senha inválidos!";
         }
-    } else {
-        $error = "Usuario nao encontrado";
     }
-
 }
+
+// Verifica se o formulário de login foi enviado
+if(isset($_POST['password'])){
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Recebe os dados do formulário
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+
+    // Cria um objeto da classe Login
+    $login = new Login();
+
+    // Chama o método de login
+    $login->userLogin($username, $password);
+}
+}*/
 ?>
 
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
-    <title>Login</title>
+    <title>Tela de Login</title>
 </head>
 <body>
     <h2>Login</h2>
-    <form action="login.php" method="post">
-        <div>
-            <label for="username">Nome:</label>
-            <input type="text" id="username" name="username" required>
-        </div>
-        <div>
-            <label for="password">senha:</label>
-            <input type="password" id="senha" name="insera sua senha" required>
-        </div>
-        <div>
-            <button type="submit">Login</button>
-        </div>
-        <?php if (isset($error)){ "<p style = 'color:red; '>$error</p>";} ?>
+    <form action="userLogin.php" method="post">
+        <label for="username">Usuário:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">Senha:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+        <input type="submit" value="Entrar">
     </form>
-    
 </body>
 </html>
+

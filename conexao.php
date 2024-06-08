@@ -1,13 +1,13 @@
 
 <?php
 
-$servername = "localhost";
+$servername = "192.168.8.10";
 
-$username = "root"; // Nome de usuário do MySQL
+$username = "grupophp03"; // Nome de usuário do MySQL
 
-$password = ""; //  Sua senha do MySQL
+$password = "php03"; //  Sua senha do MySQL
 
-$dbname = "bancoG"; //  Nome do seu banco de dados
+$dbname = "grupo03php"; //  Nome do seu banco de dados
  
 // Criar conexão
 

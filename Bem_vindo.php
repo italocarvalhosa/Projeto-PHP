@@ -14,7 +14,7 @@ if (!isset($_SESSION ['username'])){
         <title>Bem vindo</title>
     </head>
     <body>
-        <h1>Bem Vindo <?php echo $_SESSIO['username']; ?></h1>
+        <h1>Bem Vindo <?php echo $_SESSION['username']; ?></h1>
         <a href="logout.php">Sair</a>
     </body>
 </html>

@@ -18,15 +18,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Nova tarefa adicionada com sucesso!";
 
         // Redirecionar para a página inicial após 2 segundos
-        header("refresh:2; url=index.php");
+        header("refresh:2; url=conteudo.php");
         exit;
     } else {
         echo "Erro ao adicionar nova tarefa: " . $conn->error;
     }
 } else {
     // Se o formulário não foi submetido, redirecionar para a página inicial
-    header("Location: index.php");
+    header("Location: conteudo.php");
     exit;
 }
 ?>
-s
