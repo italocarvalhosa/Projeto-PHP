@@ -8,8 +8,6 @@ include "conexao.php";
 
 
 
-//include "adicionar_tarefas.php";
-
 
 // Verificar se o ID da tarefa foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET['id'])) {
