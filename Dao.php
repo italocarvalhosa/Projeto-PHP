@@ -4,12 +4,12 @@ class Dao {
 private $dsn = "mysql:host=192.168.8.10;dbname=grupo03php";
 private $username = "grupophp03";
 private$password = "php03";
-private $pdo;
-public $result ;
+private $pdo; /* guardará um objeto */
+
 
 public function __construct(){
     $this->pdo = new PDO($this->dsn, $this->username, $this->password);
-}
+}  /* e um método construtor que instância a criação a classe e possibilita que um objeto seja criado */
 
 public function insertLogin($usuario,$senha){
     try {
@@ -18,13 +18,13 @@ public function insertLogin($usuario,$senha){
            echo "<pre>";
          echo $this->pdo->errorInfo()[2];
        }
-}
+} /* a  função faz com que seja inserido dados no banco de dados usando os parâmetros usuario e senha, tendo a consulta e se houver exceção uma mensagem de erro e mostrada  */
 
 public function listar(){
     $stmt = $this->pdo->query("SELECT * FROM login");
-    while ($linha = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    while ($linha = $stmt->fetch(PDO::FETCH_ASSOC)) {  /* O fetch retorna um array associativo de cada linha de resultado */
     echo $linha['usuario'] . " - " . $linha['senha'] . "<br>";
-    }
+    } /* esse método percorre no banco de dados como um array e mostra todos os registros já feito no banco de dados pelo fetch e os mostra antes de cada login */
 }
 
 public function userLogin($username, $password) {
@@ -35,7 +35,7 @@ public function userLogin($username, $password) {
         header("Location: conteudo.php");
     } else {
         echo "Usuário ou senha inválidos!";
-    }
+    } /* a função userLogin faz a verificação do usuário e a senha no banco,  caso tenha veracidade a tela e direcionada para o conteúdo principal, se não o login é inválido */
 }
 }
 
