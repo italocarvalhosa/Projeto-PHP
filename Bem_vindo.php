@@ -14,7 +14,7 @@ if (!isset($_SESSION ['username'])){ /* verificar se a variável está definida.
         <title>Bem vindo</title>
     </head>
     <body>
-        <h1>Bem Vindo <?php echo $_SESSION['username']; ?></h1>/*imprimi uma mensagem da sessão*/ 
+        <h1>Bem Vindo <?php echo $_SESSION['username']; ?></h1> /* imprimi uma mensagem da sessão */ 
         <a href="logout.php">Sair</a> 
     </body>
 </html>
