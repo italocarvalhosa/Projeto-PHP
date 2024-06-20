@@ -2,10 +2,7 @@
 <?php
 require_once 'Dao.php';
 $dao = new Dao();
-$resultado = $dao->result;
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -19,48 +16,34 @@ $resultado = $dao->result;
 
     <h2>Tarefas Pendentes</h2>
     <ul>
-        <?php
-        // Loop através de todas as tarefas e exibi-las
-        if ($resultado !== null) {
-        if ($resultado->num_rows > 0) {
-            while($row = $resultado->fetch_assoc()) {
-                if ($row['status'] === 'pendente') {
-                    echo "<li>" . $row["nome"] . " - " . $row["descricao"] 
-                
-                    ?>
-                     <form action='.php'
-                      <?php echo $row ['id'] ?>
-                       method='POST'>
-                      <button type='submit' name='concluir'>Concluir</button>;
-                      <?php
-                }
-            }
-        } else {
-            echo "<li>Nenhuma tarefa pendente encontrada</li>";
+
+    <?php
+        $dados = $dao->mostrarTarefasPendentes();
+        while ($linha = $dados->fetch()) {
+    ?>
+
+<a href="concluirTarefa.php?id_tarefa=<?php echo $linha['id'] ?>" title="<?php echo $linha['descricao'] ?>"><?php echo $linha['nome'] ?></a><br>
+
+    <?php
         }
-    }
-        ?>
+    ?>
+
     </ul>
 
     <h2>Tarefas Concluídas</h2>
     <ul>
-        <?php
-        // Voltar para o início do resultado para listar as tarefas concluídas
-        if ($resultado !== null) {
-        $resultado->data_seek(0);
-        // Loop através de todas as tarefas e exibi-las
 
-        if ($resultado->num_rows > 0) {
-            while($row = $resultado->fetch_assoc()) {
-                if ($row['status'] === 'concluída') {
-                    echo "<li>" . $row["nome"] . " - " . $row["descricao"] . "</li>";
-                }
-            }
-        } else {
-            echo "<li>Nenhuma tarefa concluída encontrada</li>";
+    <?php
+        $dados = $dao->mostrarTarefasConcluida();
+        while ($linha = $dados->fetch()) {
+    ?>
+
+<a title="<?php echo $linha['descricao'] ?>"><?php echo $linha['nome'] ?></a><br>
+
+    <?php
         }
-    }
-        ?>
+    ?>
+
     </ul>
 
     <a href="adicionar_tarefas.php">Adicionar Nova Tarefa</a>

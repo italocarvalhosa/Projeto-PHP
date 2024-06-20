@@ -1,13 +1,13 @@
 
 <?php
 
-$servername = "192.168.8.10"; /* SSH
+$servername = "localhost";
 
-$username = "grupophp03"; //  MySQL
+$username = "root"; //  MySQL
 
-$password = "php03"; //   
+$password = ""; //   
 
-$dbname = "grupo03php"; //  Nome do seu banco de dados
+$dbname = "BancoG"; //  Nome do seu banco de dados
  
 // Criar conexão  e acessa os dados 
 

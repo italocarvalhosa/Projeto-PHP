@@ -1,9 +1,3 @@
-<?php
-include 'Dao.php';
-
-?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,6 +11,7 @@ include 'Dao.php';
         <label for="password">Senha:</label><br>
         <input type="password" id="password" name="password"><br><br>
         <input type="submit" value="Entrar">
+        <a href="cadastro.php">cadastrar</a>
     </form>
 </body>
 </html>

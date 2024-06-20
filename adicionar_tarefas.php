@@ -18,16 +18,15 @@
 <h1>Adicionar Nova Tarefa</h1>
  
     <form action="processar_tarefas.php" method="post">
-        <label for="nome">Nome da Tarefa:</label><br> /* rótula o campo de entrada pelo for */
-        <input type="text" id="nome" name="nome" required><br> /* e a entrada de texto e deve ser preenchido obrigatoriamente */
-        
+        <label for="nome">Nome da Tarefa:</label><br>
+        <input type="text" id="nome" name="nome" required><br>
         <label for="descricao">Descrição:</label><br> 
         <textarea id="descricao" name="descricao"></textarea><br>
       
 
-        <input type="submit" value="Adicionar Tarefa">   /* botão para inserção da tarefa */    
+        <input type="submit" value="Adicionar Tarefa">  
 </form>
 
-<a href="conteudo.php">Voltar para a Lista de Tarefas</a>  /* volta para a tela principal */
+<a href="conteudo.php">Voltar para a Lista de Tarefas</a>
 
 </html>

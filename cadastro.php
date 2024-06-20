@@ -41,7 +41,7 @@
 <body>
     <div class="container">
         <h2>Cadastro</h2>
-        <form action="cadastro_process.php" method="post">
+        <form action="insertLogin.php" method="post">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
             <label for="password">Password:</label>
