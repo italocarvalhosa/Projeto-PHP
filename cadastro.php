@@ -43,11 +43,14 @@
         <h2>Cadastro</h2>
         <form action="insertLogin.php" method="post">
             <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+            <input type="text" id="username" name="username" required> <!-- deixa obrigatorio o campo -->
+
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+            <input type="password" id="password" name="password" required> 
+
             <label for="confirm_password">Confirm Password:</label>
             <input type="password" id="confirm_password" name="confirm_password" required>
+
             <input type="submit" value="Cadastro">
         </form>
     </div>
