@@ -22,7 +22,11 @@ $dao = new Dao();
         while ($linha = $dados->fetch()) {
     ?>
 
-<a href="concluirTarefa.php?id_tarefa=<?php echo $linha['id'] ?>" title="<?php echo $linha['descricao'] ?>"><?php echo $linha['nome'] ?></a><br>
+<a href="concluirTarefa.php?id_tarefa=
+<?php echo $linha['id'] ?>" title="
+<?php echo $linha['descricao'] ?>">
+<?php echo $linha['nome'] ?></a>
+<br>
 
     <?php
         }
