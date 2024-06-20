@@ -4,6 +4,7 @@
     <title>Tela de Login</title>
 </head>
 <body>
+
     <h2>Login</h2>
     <form action="userLogin.php" method="post">
         <label for="username">Usuário:</label><br>
@@ -13,6 +14,7 @@
         <input type="submit" value="Entrar">
         <a href="cadastro.php">cadastrar</a>
     </form>
+    </div>
 </body>
 </html>
 
