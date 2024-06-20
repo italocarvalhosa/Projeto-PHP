@@ -8,7 +8,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST['nome'];
     $descricao = $_POST['descricao'];
 
-    // Validar os dados (pode adicionar mais validações conforme necessário)
 
     // Inserir a nova tarefa no banco de dados
     $sql = "INSERT INTO tarefas (nome, descricao) VALUES ('$nome', '$descricao')";
