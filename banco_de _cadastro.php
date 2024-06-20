@@ -27,6 +27,7 @@ if (empty($user)|| empty ($email)|| empty($password)) {
 // Verificar no banco de dados
 $sql = "SELECT if FROM users Where username = ? OR email =?";
 
+/* declaração preparada */
 $stmt = $conn ->prepare ($sql);
 $stmt -> bind_param ("ss", $user, $email);
 $stmt -> execute();
