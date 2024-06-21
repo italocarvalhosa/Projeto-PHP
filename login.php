@@ -4,7 +4,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background-color: color rgb(100, 150, 238);
             margin: 0;
             padding: 0;
             display: flex;
@@ -16,7 +16,7 @@
         .login-container {
             background-color: #fff;
             padding: 20px;
-            border-radius: 8px;
+            border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 300px;
             text-align: center;
@@ -33,7 +33,7 @@
         label {
             display: block;
             margin-bottom: 10px;
-            color: #666;
+            color: #777;
         }
 
         input[type="text"],
@@ -65,7 +65,7 @@
 
 
         a {
-            margin-top: 5px; /* Espaçamento acima do link */
+            margin-top: 0px; /* Espaçamento acima do link */
             display: inline-block; /* Torna o link um bloco para aplicar margens */
             width: 48%; /* Ajustando a largura para caber dois botões lado a lado */
             padding: 10px;
