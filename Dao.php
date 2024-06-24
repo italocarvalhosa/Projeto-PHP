@@ -19,7 +19,9 @@ private $pdo; /* guardará um objeto */
            echo "<pre>";
          echo $this->pdo->errorInfo()[2];
        }
-    } /* a  função faz com que seja inserido dados no banco de dados usando os parâmetros usuario e senha, tendo a consulta e se houver exceção uma mensagem de erro e mostrada  */
+    } /* a  função faz com que seja inserido dados no banco de dados
+     usando os parâmetros usuario e senha,
+      tendo a consulta e se houver exceção uma mensagem de erro e mostrada  */
 
     public function listar(){
     $stmt = $this->pdo->query("SELECT * FROM login");
