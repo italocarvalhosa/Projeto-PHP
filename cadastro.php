@@ -41,7 +41,7 @@
 <body>
     <div class="container">
         <h2>Cadastro</h2>
-        <form action="insertLogin.php" method="post">
+        <form action="inserirLogin.php" method="post">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required> <!-- deixa obrigatorio o campo -->
 

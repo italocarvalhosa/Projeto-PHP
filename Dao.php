@@ -1,6 +1,7 @@
 <?php
 class Dao {
 
+
 private $dsn = "mysql:host=localhost;dbname=BancoG";
 private $username = "root";
 private$password = "";
@@ -10,7 +11,8 @@ private $pdo; /* guardará um objeto */
     public function __construct(){
     $this->pdo = new PDO($this->dsn, $this->username, $this->password);
     }  /* e um método construtor que instância a criação a classe e possibilita que um objeto seja criado */
-
+   
+   
     public function insertLogin($usuario,$senha){
     try {
         $stmt = $this->pdo->query("insert into login (username, password) values ('$usuario','$senha');");
