@@ -40,7 +40,8 @@ private $pdo; /* guardará um objeto */
         header("Location: conteudo.php");
     } else {
         echo "Usuário ou senha inválidos!";
-    } /* a função userLogin faz a verificação do usuário e a senha no banco,  caso tenha veracidade a tela e direcionada para o conteúdo principal, se não o login é inválido */
+    } /* a função userLogin faz a verificação do usuário e a senha no banco,  
+    caso tenha veracidade a tela e direcionada para o conteúdo principal, se não o login é inválido */
     }
 
     public function mostrarTarefasPendentes()
